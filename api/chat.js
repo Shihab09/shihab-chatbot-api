@@ -65,7 +65,7 @@ Currently open for new opportunities.`
     if (!geminiRes.ok) {
       const errMsg = data?.error?.message || "Unknown Gemini error";
       console.error("Gemini Error:", errMsg);
-      return res.status(200).json({ reply: `DEBUG - API Error: ${errMsg}` });
+      return res.status(200).json({ reply: `Sorry, I'm unavailable right now. Please contact Shihab at shihab9rasim@gmail.com` });
     }
 
     const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text
