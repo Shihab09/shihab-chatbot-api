@@ -65,7 +65,7 @@ Currently open for new opportunities.`
     if (!geminiRes.ok) {
       const errMsg = data?.error?.message || "Unknown Gemini error";
       console.error("Gemini Error:", errMsg);
-      return res.status(200).json({ reply: `Sorry, I'm unavailable right now. Please contact Shihab at shihab9rasim@gmail.com` });
+      return res.status(200).json({ reply: `ERROR: ${errMsg}` });
     }
 
     const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text
@@ -75,6 +75,6 @@ Currently open for new opportunities.`
 
   } catch (error) {
     console.error("Server Error:", error.message);
-    res.status(200).json({ reply: `DEBUG - Server Error: ${error.message}` });
+    res.status(200).json({ reply: `CATCH ERROR: ${error.message}` });
   }
 }
